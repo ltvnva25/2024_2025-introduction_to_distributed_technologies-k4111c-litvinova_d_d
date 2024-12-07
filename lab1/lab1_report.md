@@ -44,7 +44,7 @@ minikube kubectl -- port-forward service/zxc 8200:8200
 kubectl logs zxc
  ```
 найдем данные о Root Token
- ![root token](content/Root Token.png)
+ ![root token](content/Root_Token.png)
 9) Посетим `http://localhost:8200`
 10) после ввода Root Token получаем доступ к vault 
  ![vault-interface](content/vault-interface.png)
