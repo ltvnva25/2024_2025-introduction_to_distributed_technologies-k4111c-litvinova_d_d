@@ -6,6 +6,7 @@ Group: K4111c
 Author: Litvinova Daria Dmitrievna  
 Lab: Lab1  
 Date of create: 07.12.24 
+Date of finished: 07.12.24 
 Date of finished: -
 ---
 ## Ход работы
