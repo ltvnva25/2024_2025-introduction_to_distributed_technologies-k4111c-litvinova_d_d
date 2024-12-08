@@ -20,7 +20,7 @@ alias kubectl="minikube kubectl --"
 3) Напишем [манифест](myfirst.yml), где зададим имя пода `zxc`
 4) Добавим созданый манифест в кластер
 ```bash 
-kubectl apply -f myfirst.yml
+kubectl apply -f myfirst.yaml
 ```
 5) Проверим статус пода с помощью
 ```bash
