@@ -41,5 +41,6 @@ minikube kubectl -- port-forward service/zxc-service 3000:3000
 kubectl logs <имя пода>
 ```
 ![image](./logs.png)
+
 9. Схема организации контейеров и сервисов
 ![image](./images/objects.png)
