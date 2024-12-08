@@ -7,7 +7,7 @@ Author: Litvinova Daria Dmitrievna \
 Lab: Lab2 \
 Date of create: 08.12.2024 \
 Date of finished: -
-
+## Лабораторная работа №1 "Установка Docker и Minikube, мой первый манифест."
 ## Ход работы
 1) Запустим Minikube
 ```bash
