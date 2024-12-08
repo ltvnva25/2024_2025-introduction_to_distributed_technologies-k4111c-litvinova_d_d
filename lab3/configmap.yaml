@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: l3-configmap
+data:
+  REACT_APP_USERNAME: "ltvnva25"
+  REACT_APP_COMPANY_NAME: "litvinova-itmo"

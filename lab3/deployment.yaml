@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: l3-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: l3-deployment
+  template:
+    metadata:
+      labels:
+        app: l3-deployment
+    spec:
+      containers:
+        - name: frontend
+          image: ifilyaninitmo/itdt-contained-frontend:master
+          ports:
+          - containerPort: 3000
+          envFrom:
+            - configMapRef:
+                name: l3-configmap

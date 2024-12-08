@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: l3-ingress
+spec:
+  tls:
+  - hosts:
+    - litvinova-itmo.com
+    secretName: app-crt
+  rules:
+  - host: litvinova-itmo.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: l3-service
+            port:
+              number: 3000
