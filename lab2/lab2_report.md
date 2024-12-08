@@ -8,14 +8,14 @@ Lab: Lab2 \
 Date of create: 08.12.2024 \
 Date of finished: -
 ## Лабораторная работа №2 "Развертывание веб сервиса в Minikube, доступ к веб интерфейсу сервиса. Мониторинг сервиса."
-1. Создадим [файл с конфигурацией](./deployment.yml). Укажем согласно заданию количество реплик `replicas` равное `2`.
+1. Создадим [файл с конфигурацией](./deployment.yaml). Укажем согласно заданию количество реплик `replicas` равное `2`.
 2. Запустим minikube
 ```bash
 minikube start
 ```
 3. Добавим созданый deployment с помощью команды
 ```bash
-minikube kubectl -- apply -f deployment.yml
+minikube kubectl -- apply -f deployment.yaml
 ```
 4. Проверим добавление объекта `deployment` и наличие `pod`
 ```bash
