@@ -24,7 +24,7 @@ kubectl get deployments
 ```bash
 kubectl get pods
 ```
-![image](./deployment_and_pods.png)
+![image](./images/deployment_and_pods.png)
 
 5. Зададим тип сервиса `ClusterIP`, чтобы взаимодействие с серсисом происходило только внутри кластера
 ```bash
@@ -35,12 +35,12 @@ minikube kubectl -- expose deployment zxc-deployment --port=3000 --name=zxc-serv
 minikube kubectl -- port-forward service/zxc-service 3000:3000
 ```
 7. При переходе на `localhost:3000` получаем следующее:
-![image](./local_host.png)
+![image](./images/local_host.png)
 8. Сравним логи используемых подов в помощью:
 ```bash
 kubectl logs <имя пода>
 ```
-![image](./logs.png)
-
+![image](./images/logs.png)
+Можно заметить, что данные логи совпадают 
 9. Схема организации контейеров и сервисов
 ![image](./images/objects.png)
