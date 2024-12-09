@@ -27,7 +27,7 @@ minikube kubectl -- create secret tls app-crt --key MyKey.key --cert MyCertifica
 ```bash
 minikube kubectl -- expose replicaset l3-deployment --port=3000 --name=l3-service --type=ClusterIP
 ```
-9. Создадим файл (ingress.yaml)[./ingress.yaml]
+9. Создадим файл [ingress.yaml](./ingress.yaml)
 10. Добавим созданный файл в среду 
 minikube kubectl -- apply -f ingress.yaml
 11. Чтобы настроить `hosts` необходимо узнать используемый средой ip-адрес.
@@ -37,7 +37,7 @@ minikube ip
 а затем добавить в директорию /etc/host/ своё FQDN-имя и ip-адрес
 ![image](./images/ip.png)
 12. При переходе на `litvinova-itmo.com` получаем следующее:
-![image](./images/litvinova-itma.png)
+![image](./images/litvinova-itmo.png)
 13. Проверим TLS-сертификат
 ![image](./images/crt.png)
 14. Схема организации контейнеров и сервисов
