@@ -29,7 +29,9 @@ minikube kubectl -- expose replicaset l3-deployment --port=3000 --name=l3-servic
 ```
 9. Создадим файл [ingress.yaml](./ingress.yaml)
 10. Добавим созданный файл в среду 
+```bash
 minikube kubectl -- apply -f ingress.yaml
+```
 11. Чтобы настроить `hosts` необходимо узнать используемый средой ip-адрес.
 ```bash 
 minikube ip
