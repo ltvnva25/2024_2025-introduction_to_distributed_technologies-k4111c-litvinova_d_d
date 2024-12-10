@@ -4,8 +4,8 @@ Course: [Introduction to distributed technologies](https://github.com/itmo-ict-f
 Year: 2024/2025 \
 Group: K4111c \
 Author: Litvinova Daria Dmitrievna \
-Lab: Lab2 \
-Date of create: 08.12.2024 \
+Lab: Lab1 \
+Date of create: 12.12.2024 \
 Date of finished: -
 ## Лабораторная работа №1 "Установка Docker и Minikube, мой первый манифест."
 ## Ход работы
@@ -44,11 +44,11 @@ kubectl logs zxc
 9) Посетим `http://localhost:8200`
 
 10) После ввода Root Token получаем доступ к vault 
-![image](./images/local_host.png)
+![image](./images/access.png)
 
-11) Остановим Minikube
+12) Остановим Minikube
  ```bash
 minikube stop
 ``` 
 12) Составим схему в draw.io
-![image](./images/local_host.png)
+![image](./images/draw_lab1.png)
