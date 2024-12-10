@@ -5,7 +5,7 @@ Year: 2024/2025 \
 Group: K4111c \
 Author: Litvinova Daria Dmitrievna \
 Lab: Lab2 \
-Date of create: 08.12.2024 \
+Date of create: 12.12.2024 \
 Date of finished: -
 ## Лабораторная работа №2 "Развертывание веб сервиса в Minikube, доступ к веб интерфейсу сервиса. Мониторинг сервиса."
 1. Создадим [файл конфигурации](./deployment.yaml). Укажем согласно заданию количество реплик `replicas` равное `2`.
@@ -42,6 +42,8 @@ minikube kubectl -- port-forward service/zxc-service 3000:3000
 kubectl logs <имя пода>
 ```
 ![image](./images/logs.png)
+
 Можно заметить, что данные логи совпадают 
+
 9. Схема организации контейеров и сервисов
-![image](./images/objects.png)
+![image](./images/draw_lab2.png)
