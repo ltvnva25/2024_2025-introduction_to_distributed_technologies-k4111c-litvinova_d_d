@@ -1,3 +1,14 @@
+University: [ITMO University](https://itmo.ru/ru/) \
+Faculty: [FICT](https://fict.itmo.ru) \
+Course: [Introduction to distributed technologies](https://github.com/itmo-ict-faculty/introduction-to-distributed-technologies) \
+Year: 2024/2025 \
+Group: K4111c \
+Author: Litvinova Daria Dmitrievna \
+Lab: Lab3 \
+Date of create: 12.12.2024 \
+Date of finished: -
+## Лабораторная работа №3 "Сертификаты и "секреты" в Minikube, безопасное хранение данных."
+## Ход работы
 1. Создадим файл конфигурации [configmap.yaml](./configmap.yaml), где указки значения переменных `REACT_APP_USERNAME` и `REACT_APP_COMPANY_NAME`. 
 2. Создадим файл конфигурации [deployment.yaml](./deployment.yaml), в который создает объект `ReplicaSet` с 2 репликами контейнера `ifilyaninitmo/itdt-contained-frontend:master`
 3. Запустим minikube
@@ -15,7 +26,7 @@ minikube kubectl -- apply -f deployment.yaml
 ```bash
 minikube addons enable ingress
 ```
-6. Создадим TLS-сертификат, где зададим такие параметры как `rsa` - ключ шифрования, `days` срок действия сертификата в виде количества дней. 
+6. Создадим TLS-сертификат, где зададим такие параметры как `rsa` - ключ шифрования, `days` - срок действия сертификата, выраженный количеством дней. 
 ```bash
 openssl req -new -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out MyCertificate.crt -keyout MyKey.key -subj "/CN=litvinova-itmo.com"
 ```
@@ -36,10 +47,12 @@ minikube kubectl -- apply -f ingress.yaml
 ```bash 
 minikube ip
 ```
-а затем добавить в директорию /etc/host/ своё FQDN-имя и ip-адрес
+а затем добавить в директорию `/etc/host/` своё FQDN-имя и ip-адрес
 ![image](./images/ip.png)
+
 12. При переходе на `litvinova-itmo.com` получаем следующее:
 ![image](./images/litvinova-itmo.png)
 13. Проверим TLS-сертификат
 ![image](./images/crt.png)
 14. Схема организации контейнеров и сервисов
+![image](./images/draw_lab3.png)
