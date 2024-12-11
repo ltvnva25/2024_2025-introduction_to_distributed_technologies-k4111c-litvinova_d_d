@@ -13,12 +13,12 @@ Date of finished: -
 ```bash
 minikube start
 ```
-2) Для удобства использования создадим алиас
+2) Для корректной работы пода в данной работе (т.е отсутствие статуса `Pending`) укажем конкретную версию образа `HashiCorp Vault`
 ```bash 
-alias kubectl="minikube kubectl --"
+docker pull vault:1.13.3"
 ```
 3) Напишем [манифест](myfirst.yml), где зададим имя пода `zxc`
-4) Добавим созданый манифест в кластер
+4) Добавим созданый манифест в среду, чтобы создать соответствующий объект в кластере
 ```bash 
 kubectl apply -f myfirst.yaml
 ```
@@ -26,6 +26,8 @@ kubectl apply -f myfirst.yaml
 ```bash
 kubectl get pods
 ```
+![image](./images/pod_status.png)
+
 6) Создадим сервис для доступа к этому контейнеру
 ```bash
 minikube kubectl -- expose pod zxc --type=NodePort --port=8200
@@ -39,16 +41,17 @@ minikube kubectl -- port-forward service/zxc 8200:8200
 kubectl logs zxc
  ```
 найдем данные о Root Token
-![image](./images/Root_Token.png)
+![image](./images/root_token.png)
 
 9) Посетим `http://localhost:8200`
 
 10) После ввода Root Token получаем доступ к vault 
 ![image](./images/access.png)
 
-12) Остановим Minikube
+11) Остановим Minikube
  ```bash
 minikube stop
 ``` 
 12) Составим схему в draw.io
 ![image](./images/draw_lab1.png)
+
