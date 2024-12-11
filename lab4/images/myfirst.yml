@@ -1,0 +1,18 @@
+minikube start --network-plugin=cni --cni=calico --nodes 2
+
+minikube kubectl get nodes
+minikube kubectl -- get pods -l k8s-app=calico-node -A
+minikube kubectl -- label nodes minikube-m02 zone=east
+minikube kubectl -- label nodes minikube zone=west
+minikube kubectl -- delete ippools default-ipv4-ippool
+calicoctl create -f ippool_west.yaml --allow-version-mismatch
+calicoctl create -f ippool_east.yaml --allow-version-mismatch
+calicoctl get ippool -o wide --allow-version-mismatch
+minikube kubectl -- apply -f deployment.yaml
+minikube kubectl -- expose deployment l4-deployment --port=3000 --name=l4-service --type=ClusterIP
+kubectl get pods
+minikube kubectl -- port-forward service/l4-service 3000:3000
+minikube kubectl -- get pods -o wide
+minikube kubectl -- exec -ti l4-deployment-6c5b894d46-t4x5q -- sh /kubectl exec l4-deployment-6c5b894d46-zs5p5 --  ping 192.168.0.65
+kubectl exec l4-deployment-6c5b894d46-t4x5q--  ping 192.168.1.1
+
