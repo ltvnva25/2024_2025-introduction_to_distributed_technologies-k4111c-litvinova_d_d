@@ -8,9 +8,5 @@ spec:
   containers:
   - name: vault
     image: vault:1.13.3
-    resources:
-      limits:
-        memory: "512Mi"
-        cpu: "1"
     ports:
-      - containerPort: 8200
+    - containerPort: 8200
