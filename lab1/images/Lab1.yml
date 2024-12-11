@@ -1,0 +1,6 @@
+minikube start
+docker pull vault:1.13.3
+minikube kubectl -- apply -f myfirst.yaml
+minikube kubectl -- expose pod zxc --type=NodePort --port=8200
+minikube kubectl -- port-forward service/zxc 8200:8200
+minikube kubectl logs zxc
