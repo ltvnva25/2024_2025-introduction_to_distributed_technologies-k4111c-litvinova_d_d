@@ -49,7 +49,7 @@ minikube kubectl -- apply -f ingress.yaml
 ```bash 
 minikube ip
 ```
-а затем добавить в директорию `/etc/host/` своё FQDN-имя и ip-адрес
+а затем добавить в директорию `/etc/host/` свой созданный в п.6 объект и ip-адрес
 ![image](./images/ip.png)
 
 12. При переходе на `litvinova-itmo.com` получаем следующее:
