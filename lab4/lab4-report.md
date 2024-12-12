@@ -9,7 +9,7 @@ Date of create: 12.12.2024 \
 Date of finished: -
 ## Лабораторная работа №4 "Сети связи в Minikube, CNI и CoreDNS"
 ## Ход работы
-1. После предварительной установки `caloco` запустим `minikube`, установив плагин `CNI=calico` и указав количество нод равное 2
+1. После предварительной установки `calico` запустим `minikube`, установив плагин `CNI=calico` и указав количество нод равное 2
 ```bash
 minikube start --network-plugin=cni --cni=calico --nodes 2
 ```
