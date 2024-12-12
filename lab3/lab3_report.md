@@ -26,13 +26,13 @@ minikube kubectl -- apply -f deployment.yaml
 ```bash
 minikube addons enable ingress
 ```
-ngress — это набор правил внутри кластера Kubernetes, предназначенных для того, чтобы входящие подключения могли достичь сервисов приложений
+Ingress — это набор правил внутри кластера Kubernetes, предназначенных для того, чтобы входящие подключения могли достичь сервисов приложений
 
 6. Создадим TLS-сертификат, где зададим такие параметры как `rsa` - ключ шифрования, `days` - срок действия сертификата, выраженный количеством дней. 
 ```bash
 openssl req -new -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out MyCertificate.crt -keyout MyKey.key -subj "/CN=litvinova-itmo.com"
 ```
-7. Добавим созданые файлы для сертификата в среду, поскольку в п.6 данной работы файлы MyKey.key и MyCertificate.crt создаются только в рабочей директории.
+7. Добавим созданые файлы для сертификата в среду, поскольку в п.6 данной работы файлы `MyKey.key` и `MyCertificate.crt` создаются только в рабочей директории.
 ```bash
 minikube kubectl -- create secret tls app-crt --key MyKey.key --cert MyCertificate.crt
 ```
