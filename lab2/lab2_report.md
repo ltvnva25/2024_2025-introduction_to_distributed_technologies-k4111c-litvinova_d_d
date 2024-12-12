@@ -31,7 +31,7 @@ kubectl get pods
 ```bash
 minikube kubectl -- expose deployment zxc-deployment --port=3000 --name=zxc-service --type=ClusterIP
 ```
-6. Пробросим порты, аналагично п. в лабораторной работе 1
+6. Пробросим порты для подклбчения к контейнеру
 ```bash
 minikube kubectl -- port-forward service/zxc-service 3000:3000
 ```
@@ -46,5 +46,7 @@ kubectl logs <имя пода>
 
 Можно заметить, что данные логи совпадают 
 
-9. Схема организации контейеров и сервисов
+Таким образом, в данной лабораторной работе был развернут полноценный веб сервис с несколькими репликами.
+
+9. Схема организации контейеров представлена ниже
 ![image](./images/draw_lab2.png)
