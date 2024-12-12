@@ -9,10 +9,12 @@ Date of create: 12.12.2024 \
 Date of finished: -
 ## Лабораторная работа №4 "Сети связи в Minikube, CNI и CoreDNS"
 ## Ход работы
-1. Запустим `minikube`, установив плагин `CNI=calico` и указав количество нод равное 2
+1. После предварительной установки `caloco` запустим `minikube`, установив плагин `CNI=calico` и указав количество нод равное 2
 ```bash
 minikube start --network-plugin=cni --cni=calico --nodes 2
 ```
+Плагин CNI (Container Network Interface) - это программный компонент, который отвечает за настройку сетевого взаимодействия контейнеров в Kubernetes, позволяя им общаться друг с другом и с внешним миром.
+
 2. Проверим наличие, количество и имена развернутых нод с помощью:
 ```bash
 minikube kubectl get nodes
@@ -32,10 +34,14 @@ minikube kubectl -- label nodes minikube-m02 zone=east
 ```bash
 minikube kubectl -- label nodes minikube zone=west
 ```
+Label - это метка, которая прикрепляется к объектам Kubernetes, таким как поды и сервисы, для группировки и фильтрации ресурсов по определенным критериям.
+
 5.  Для назначения нодам необходимых `Ip-pool`, необходимо предварительно удалить созданные автоматически `Ip-pool` с помощью команды:
 ```bash
 minikube kubectl -- delete ippools default-ipv4-ippool
 ```
+IP-pool - это набор IP-адресов, которые могут быть назначены контейнерам в виртуальной сети, чтобы обеспечить им доступ к сети.
+
 6.  Создадим два конфигурационных файла [ippool_west.yaml](./ippool_west.yaml) и [ippool_east.yaml](./ippool_east.yaml). Добавим данные файлы в среду:
 ```bash
 calicoctl create -f ippool_west.yaml --allow-version-mismatch
@@ -43,7 +49,7 @@ calicoctl create -f ippool_west.yaml --allow-version-mismatch
 ```bash
 calicoctl create -f ippool_east.yaml --allow-version-mismatch
 ```
-7.  Проверим правильность приясвоения `зоны` 
+7.  Проверим правильность приясвоения `зон` 
 ```bash
 calicoctl get ippool -o wide --allow-version-mismatch
 ```
@@ -89,6 +95,7 @@ kubectl exec l4-deployment-6c5b894d46-zs5p5--  ping 192.168.0.65
 kubectl exec l4-deployment-6c5b894d46-t4x5q --  ping 192.168.1.1
 ```
 ![image](./images/ping2.png)
+Таким образом, в данной работе были изучены особенности работы с CNI,а также была осуществлена "прослушка" "подов" друг другом.
 
-17. Составим схему организации контейнеров
+17. Схема организации контейнеров представлена ниже:
 ![image](./images/draw_lab4.png)
