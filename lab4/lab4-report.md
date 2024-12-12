@@ -49,7 +49,7 @@ calicoctl create -f ippool_west.yaml --allow-version-mismatch
 ```bash
 calicoctl create -f ippool_east.yaml --allow-version-mismatch
 ```
-7.  Проверим правильность приясвоения `зон` 
+7.  Проверим правильность присвоения `зон` 
 ```bash
 calicoctl get ippool -o wide --allow-version-mismatch
 ```
