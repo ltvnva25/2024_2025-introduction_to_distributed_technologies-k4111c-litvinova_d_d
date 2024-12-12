@@ -31,7 +31,7 @@ kubectl get pods
 ```bash
 minikube kubectl -- expose deployment zxc-deployment --port=3000 --name=zxc-service --type=ClusterIP
 ```
-6. Пробросим порты для подклбчения к контейнеру
+6. Пробросим порты
 ```bash
 minikube kubectl -- port-forward service/zxc-service 3000:3000
 ```
