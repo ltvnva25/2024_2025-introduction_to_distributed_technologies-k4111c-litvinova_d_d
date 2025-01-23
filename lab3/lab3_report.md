@@ -6,7 +6,7 @@ Group: K4111c \
 Author: Litvinova Daria Dmitrievna \
 Lab: Lab3 \
 Date of create: 12.12.2024 \
-Date of finished: -
+Date of finished: 19.12.2024
 ## Лабораторная работа №3 "Сертификаты и "секреты" в Minikube, безопасное хранение данных."
 ## Ход работы
 1. Создадим файл конфигурации [configmap.yaml](./configmap.yaml), где указаны значения переменных `REACT_APP_USERNAME` и `REACT_APP_COMPANY_NAME`. 
