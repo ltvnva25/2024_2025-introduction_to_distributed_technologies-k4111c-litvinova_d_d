@@ -6,7 +6,7 @@ Group: K4111c \
 Author: Litvinova Daria Dmitrievna \
 Lab: Lab2 \
 Date of create: 12.12.2024 \
-Date of finished: -
+Date of finished: 19.12.2024
 ## Лабораторная работа №2 "Развертывание веб сервиса в Minikube, доступ к веб интерфейсу сервиса. Мониторинг сервиса."
 ## Ход работы
 1. Создадим [файл конфигурации](./deployment.yaml). Укажем согласно заданию количество реплик `replicas` равное `2`.
