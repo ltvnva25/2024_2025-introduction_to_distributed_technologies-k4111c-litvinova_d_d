@@ -6,7 +6,7 @@ Group: K4111c \
 Author: Litvinova Daria Dmitrievna \
 Lab: Lab1 \
 Date of create: 12.12.2024 \
-Date of finished: -
+Date of finished: 19.12.2024
 ## Лабораторная работа №1 "Установка Docker и Minikube, мой первый манифест."
 ## Ход работы
 1) После установки `Docker` и `minikube` запустим Minikube для развертывания `minikube cluster`
